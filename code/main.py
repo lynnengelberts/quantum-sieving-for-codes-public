@@ -96,18 +96,19 @@ def time_memory(alg, optimizer = None, range_weights = 100, iters = 50, prec = 1
 ##########################################################################
 #--------------------------- DRIVER CODE --------------------------------#
 ##########################################################################
-plots_dir = '../plots/'
-data_dir = '../data/'
+plots_dir = '../plots_0827/'
+data_dir = '../data_0827/'
 
 range_weights = 100
 iters = 20
-prec = 1e-7
+prec = 1e-10
 
 # Worst-case complexity
 max_t_in_L = lambda L : max(L, key=lambda x: x[1])[1]
 
 # Algorithms
-alg_names = ['RPC', 'RPC_Grover', 'RPC_quantum_walk', 'RPC_quantum_walk_sparsification', 'RPC_quantum_walk_reusable']
+alg_names = ['RPC', 'RPC_Grover', 'RPC_quantum_walk', 'RPC_quantum_walk_sparsification']
+#alg_names = ['RPC', 'RPC_Grover', 'RPC_quantum_walk', 'RPC_quantum_walk_sparsification', 'RPC_quantum_walk_reusable']
 
 result = []
 for alg_name in alg_names:

@@ -83,12 +83,12 @@ def optimize_lower_bound(k_ISD, prec = 1e-7):
 
 ### Functions for checking our claim 
 
-def check_conjecture_using_fminbound(range_rates = 100, prec = 1e-7):
+def check_claim_using_fminbound(range_rates = 100, prec = 1e-7):
     lst_of_lb = [] 
     lst_of_qP = [] 
     lst_of_checks = [] 
 
-    num_of_violations = 0 # Check whether conjecture seems reasonable 
+    num_of_violations = 0 # Check whether claim is violated
 
     for i in range(1, range_rates):
         k_ISD = i/range_rates
@@ -99,13 +99,13 @@ def check_conjecture_using_fminbound(range_rates = 100, prec = 1e-7):
         lst_of_lb.append([k_ISD, time_lower_bound])
         lst_of_qP.append([k_ISD, time_quantum_Prange])
 
-        # Check if current iteration satisfies conjecture 
-        if time_lower_bound > time_quantum_Prange: 
+        # Check if current iteration satisfies claim 
+        if time_lower_bound >= time_quantum_Prange: 
             check = 1
         else: 
             check = 0
             num_of_violations += 1
-            print("Conjecture violated")
+            print("Claim violated")
         lst_of_checks.append(check)
 
     print("Number of violations = ", num_of_violations, " out of ", range_rates) 
@@ -128,44 +128,7 @@ def plot_comparison(lst_of_times): #lst_of_times contains lb and qP times
     plt.show()
 
 
-### Function to plot the lower bound as a function of n',w' (for given k)
-
-def plot_lower_bound(k_ISD, range_of_n_NNS = 100, range_of_w_NNS = 500):
-    results = []
-    for i in range(range_of_n_NNS): 
-        L_lb = []
-        n_NNS = k_ISD + i/range_of_n_NNS 
-        if n_NNS >= 1: 
-            continue
-
-        for i in range(range_of_w_NNS):
-            w_NNS = i/range_of_w_NNS
-            if check_constraints(k_ISD, n_NNS, w_NNS) == False: 
-                continue
-            
-            lower_bound = quantum_SievingISD_lower_bound(k_ISD, n_NNS, w_NNS)
-            L_lb.append([k_ISD, n_NNS, w_NNS, lower_bound]) # lower bound on quantum ISD
-
-        if L_lb != []: 
-            results.append([L_lb, "n' = " + str(n_NNS)])
-
-    for result in results:
-        L = result[0] 
-        label = result[1]
-        L_plot =[[j[2],j[3]] for j in L] # Only plot w_NNS and lower_bound
-        x,y=zip(*L_plot)
-        plt.plot(x, y, label=label)  
-    plt.title("Lower bound on Quantum SievingISD as function of (n', w') for k = " + str(k_ISD))
-    plt.xlabel(r'$\omega$' + " s.t. w' = " + r'$\omega$' + "n'")
-    plt.ylabel(r'$c$' + ' s.t. runtime is ' + r'$2^{cn}$')  
-    plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
-    plt.show()
-
-
 ### Driver code
     
-lst_of_times, lst_of_checks = check_conjecture_using_fminbound(range_rates = 100, prec = 1e-10) 
+lst_of_times, lst_of_checks = check_claim_using_fminbound(range_rates = 100, prec = 1e-10) 
 plot_comparison(lst_of_times)
-
-k_ISD = 0.44
-plot_lower_bound(k_ISD, range_of_n_NNS = 100, range_of_w_NNS = 500)
