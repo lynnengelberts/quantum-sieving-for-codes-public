@@ -19,7 +19,7 @@ To compare the performance of the implemented quantum sieving algorithms, you ne
 ### Parameters
 
 The following parameters can be adjusted in the code/main.py script:
-- **alg_names**: Names of the algorithms to be compared. Default options: ['RPC', 'RPC_Grover', 'RPC_quantum_walk', 'RPC_quantum_walk_sparsification']
+- **alg_names**: Names of the algorithms to be compared. Default: ['RPC', 'RPC_Grover', 'RPC_quantum_walk', 'RPC_quantum_walk_sparsification']
 - **data_dir**: Directory where the comparison data is stored. Default: ../data/
 - **plots_dir**: Directory where the data corresponding plots are saved. Default: ../plots/
 - **range_weights**: Number of points at which the complexity is calculated, corresponding to different weights. Default: 100
