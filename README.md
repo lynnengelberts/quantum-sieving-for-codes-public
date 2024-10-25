@@ -14,7 +14,7 @@ This project is implemented in Python and relies on the following dependencies:
 
 ## Running the Algorithm Comparison
 
-To compare the performance of the implemented quantum sieving algorithms, you need to configure and run the Python script code/main.py. The comparison includes generating plots and saving data that reflect the performance of different algorithms.
+To compare the performance of the implemented quantum sieving algorithms, you need to configure and run the Python script code/main.py. The comparison includes obtaining data on the asymptotic runtime and memory of different algorithms and the corresponding plots that illustrate the algorithms' performance.
 
 ### Parameters
 
