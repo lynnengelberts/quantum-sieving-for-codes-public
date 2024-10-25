@@ -44,7 +44,7 @@ python limitations.py
 ```
 
 ## Authors
-Developed by researchers at Centrum Wiskunde & Informatica (CWI):
+Developed at Centrum Wiskunde & Informatica (CWI) by:
 - Lynn Engelberts – Algorithms and Complexity group, QuSoft
 - Simona Etinski – Cryptology group
 - Johanna Loyer – Cryptology group
