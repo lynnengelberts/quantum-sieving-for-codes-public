@@ -1,4 +1,4 @@
-# Code-based Near Neighbor Search
+# Code-Based Near-Neighbor Search
 
 This project analyzes the asymptotic complexity of **quantum sieving algorithms** combined with **near-neighbor search (NNS)** to solve the decoding problem, which is highly relevant in the context of public-key code-based cryptography. The goal is to compare the performance of various quantum sieving techniques when applied to near-neighbor search. For a detailed explanation and the theoretical background, please refer to the corresponding paper: [https://eprint.iacr.org/2024/1358](https://eprint.iacr.org/2024/1358).
 
@@ -50,5 +50,5 @@ Developed at Centrum Wiskunde & Informatica (CWI) by:
 - Johanna Loyer – Cryptology group
 
 ## License
-This project is licensed under the CC BY-NC License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the LICENSE file for details.
 
