@@ -1,6 +1,6 @@
 # Code-based Near Neighbor Search
 
-This project analyses the asymptotic complexity of **quantum sieving algorithms** combined with **near-neighbor search (NNS)** to solve the decoding problem, which is highly relevant in the context of public-key code-based cryptography. The goal is to compare the performance of various quantum sieving techniques when applied to near-neighbor search. For a detailed explanation and the theoretical background, please refer to the corresponding paper: [https://eprint.iacr.org/2024/1358](https://eprint.iacr.org/2024/1358).
+This project analyzes the asymptotic complexity of **quantum sieving algorithms** combined with **near-neighbor search (NNS)** to solve the decoding problem, which is highly relevant in the context of public-key code-based cryptography. The goal is to compare the performance of various quantum sieving techniques when applied to near-neighbor search. For a detailed explanation and the theoretical background, please refer to the corresponding paper: [https://eprint.iacr.org/2024/1358](https://eprint.iacr.org/2024/1358).
 
 ## Project Dependencies
 
@@ -12,9 +12,9 @@ This project is implemented in Python and relies on the following dependencies:
 - **matplotlib**: for data plotting;
 - **os** and **csv**: for data storing.
 
-## Running the Algorithm Comparison
+## Algorithm Comparison
 
-To compare the performance of the implemented quantum sieving algorithms, you need to configure and run the Python script code/main.py. The comparison includes obtaining data on the asymptotic runtime and memory of different algorithms and the corresponding plots that illustrate the algorithms' performance.
+To compare the performance of the considered algorithms, you need to set the parameters (as explained in the following subsection) and run the Python script code/main.py. The code provides data on the asymptotic runtime and memory of different algorithms and the corresponding plots that illustrate the algorithms' performance.
 
 ### Parameters
 
@@ -36,7 +36,7 @@ python main.py
 
 ## Obtaining Numerical Results on Limitations
 
-To obtain numerical data illustrating the limitations of these algorithms (saved in data_dir) and the corresponding plots (saved in plots_dir), run the code/limitations.py script:
+To obtain numerical data illustrating the limitations of these algorithms, run the code/limitations.py script:
 
 ```
 cd code/
@@ -50,5 +50,5 @@ Developed at Centrum Wiskunde & Informatica (CWI) by:
 - Johanna Loyer – Cryptology group
 
 ## License
-This project is licensed under the ... License. See the LICENSE file for details.
+This project is licensed under the CC BY-NC License. See the LICENSE file for details.
 
